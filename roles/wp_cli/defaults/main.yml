@@ -1,0 +1,5 @@
+---
+# defaults file for wp_cli
+sub_dir: ""
+admin_home: "{{ ansible_env.HOME }}{{ sub_dir }}"
+root_bin: "{{ admin_home }}/bin"

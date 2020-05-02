@@ -1,0 +1,13 @@
+---
+# tasks file for wp_cli
+- name: Create {{ root_bin }} directory
+  file:
+    path: "{{ root_bin }}"
+    state: directory
+
+- name: Install wp-cli
+  get_url:
+    url: "https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar"
+    dest: "{{ root_bin }}/wp"
+    force_basic_auth: yes
+    mode: 0755

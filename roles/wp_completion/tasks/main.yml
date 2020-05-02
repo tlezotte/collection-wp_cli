@@ -1,0 +1,21 @@
+---
+# tasks file for wp_completion
+- name: Does .bash_profile exist?
+  stat:
+    path: "{{ ansible_env.HOME }}/.bash_profile"
+  register: bash_profile
+
+- name: Install Tab Completion
+  get_url:
+    url: "https://raw.githubusercontent.com/wp-cli/wp-cli/v2.4.0/utils/wp-completion.bash"
+    dest: "{{ ansible_env.HOME }}/.wp-completion.bash"
+    force_basic_auth: yes
+    mode: 0755
+  when: bash_profile.stat.exists
+
+- name: Append Tab Completion
+  blockinfile:
+    path: "{{ ansible_env.HOME }}/.bash_profile"
+    block: |
+      source {{ ansible_env.HOME }}/.wp-completion.bash
+  when: bash_profile.stat.exists
