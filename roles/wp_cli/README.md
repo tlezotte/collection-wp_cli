@@ -36,26 +36,6 @@ This is the most basic way to run the wp-cli playbook:
 ```
 $ ansible-playbook wp_cli.yml
 ```
-This command will only run tags set with "update":
-```
-$ ansible-playbook wp_cli.yml --tags update
-```
-This command will **only** display the hosts and tasks that would run with playlist. The wp-cli.yml playbook will not be run:
-```
-$ ansible-playbook wp-cli.yml --list-hosts --list-tasks
-```
-
----
-
-To make sure wp-cli is intalled and the version. Type the following command on the servers.
-```
-wp cli info
-```
-
-Or use the Ansible ad-hoc command.
-```
-ansible wordpress -i hosts -m shell -a "wp cli info"
-```
 
 ---
 
