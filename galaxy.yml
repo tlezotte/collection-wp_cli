@@ -48,7 +48,7 @@ dependencies: {}
 repository: https://github.com/tlezotte/collection-wp_cli
 
 # The URL to any online docs
-documentation: https://github.com/tlezotte/collection-wp_cli/docs/README.md
+documentation: https://github.com/tlezotte/collection-wp_cli/tree/master/docs
 
 # The URL to the homepage of the collection/project
 homepage: https://tlezotte.github.io/collection-wp_cli
